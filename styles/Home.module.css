@@ -1,0 +1,185 @@
+.main {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.responses {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  right: 1rem;
+  height: calc(100vh - 7.5rem - 6rem);
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  overflow: scroll;
+}
+
+.center {
+  position: absolute;
+  top: calc(100vh - 7.5rem - 8rem + 2rem);
+  bottom: calc(8.5rem);
+  left: 0%;
+  right: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status {
+  background-color: rgb(105, 105, 105);
+  display: flex;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  align-items: center;
+  color: white;
+  height: 2rem;
+  text-align: center;
+}
+
+.input {
+  margin-bottom: 1rem;
+  background-color: #fdfdfd;
+  padding: 1rem;
+  position: absolute;
+  top: calc(100vh - 8.5rem);
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+.inputLabel {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.inputText {
+  box-sizing: border-box;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.inputTextText {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.iconButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px;
+  color: black
+}
+
+.iconButton2 {
+  background-color: transparent;
+  position: absolute;
+  /* top: 0.5rem; */
+  left: calc(100% - 3rem);
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px;
+}
+
+.iconButton3 {
+  background-color: transparent;
+  position: absolute;
+  top: 0.5rem;
+  left: calc(100% - 5rem);
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px;
+}
+
+
+.iconButton2:hover {
+  background-color: #eeeeee;
+}
+
+
+.iconButton3:hover {
+  background-color: #eeeeee;
+}
+
+.iconButton:hover {
+  background-color: #eeeeee;
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid black;
+  height: 1px;
+}
+
+
+.hrBtwn {
+  border: none;
+  border-top: 1px dashed #ccc;
+  height: 1px;
+  margin-top: 1rem;
+}
+
+.graphRowAbove {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.codeView {
+  /* background-color: #111;
+  color: rgb(187, 234, 187); */
+  font-family: monospace;
+  white-space: pre;
+}
+
+.graphCodeDiv {
+  max-height: 500px;
+  background-color: #fcfcfc;
+  overflow: scroll;
+  border: 1px solid #ccc;
+}
+
+.graphCodeDivFullscreen {
+  overflow-y: scroll;
+  background-color: #fcfcfc;
+  overflow: scroll;
+  border: 1px solid #ccc;
+  padding: 2rem;
+}
+
+
+.graphHeaderText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
