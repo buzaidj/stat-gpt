@@ -430,7 +430,7 @@ export default function Home() {
 
           <hr className={styles.hr} />
 
-          {gptResponses.map((x, i) => <GPTResponseComponent gptResponse={x} deleteGraph={() => removeGptResponse(x)} />)}
+          {gptResponses.map((x, i) => <GPTResponseComponent key={i} gptResponse={x} deleteGraph={() => removeGptResponse(x)} />)}
         </div>
         {statusResponse.elem &&
           <div className={styles.center}>
