@@ -258,10 +258,13 @@ function getLastCodeBlock(str: string) {
 import { ChatGPTUnofficialProxyAPI } from 'chatgpt'
 import { FormEvent, useEffect, useState } from 'react'
 
-let OPENAI_ACCESS_TOKEN = "TO_SET";
+let OPENAI_ACCESS_TOKEN: string | undefined = undefined;
 const LOADING_STATUS = <p>Asking ChatGPT...</p>
 
 function instantiateGPTApi() {
+  if (!OPENAI_ACCESS_TOKEN) {
+    return undefined
+  }
   return new ChatGPTUnofficialProxyAPI({
     accessToken: OPENAI_ACCESS_TOKEN,
     apiReverseProxyUrl: 'https://api.pawan.krd/backend-api/conversation',
@@ -375,6 +378,21 @@ export default function Home() {
 
     const gptQuery = gptify(vizQuery);
 
+    if (!api) {
+      api = instantiateGPTApi();
+      if (!api) {
+        setStatusResponse(
+          {
+            elem: <div>
+              <p>An error occurred: OpenAI API key not set. Set it in the "gear" in the top right.</p>
+            </div>,
+            type: 'error',
+          }
+        );
+        return;
+      }
+    }
+
     api.sendMessage(gptQuery).then((response) => {
       console.log(response.text);
 
@@ -415,7 +433,7 @@ export default function Home() {
         <div className={styles.responses}>
           <div className={styles.welcome}>
             <p>StatGPT is a ChatGPT wrapper that creates ChartJS charts from a prompt. Created by @jbuzzy00.</p>
-            {/* <button className={styles.iconButton} onClick={() => {
+            <button className={styles.iconButton} onClick={() => {
               const newToken = prompt('Enter an accessToken for your OpenAI account from https://chat.openai.com/api/auth/session/');
               if (newToken) {
                 const replacedToken = newToken.replaceAll('"', '').replaceAll("'", '');
@@ -424,7 +442,7 @@ export default function Home() {
               }
             }}>
               <Gear size={'18px'} />
-            </button> */}
+            </button>
 
           </div>
 
