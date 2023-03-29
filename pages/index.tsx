@@ -302,9 +302,6 @@ function GPTResponseComponent(props: { gptResponse: GPTResponse, deleteGraph: ()
   const [isCodeView, setIsCodeView] = useState(false);
   const [isFullScreen, setIsFullscreen] = useState(false);
 
-
-  const { width, height } = useWindowSize();
-
   return (
     <div className={styles.wholeResponse}>
       <div className={styles.graphRowAbove}>
@@ -397,6 +394,18 @@ export default function Home() {
         }
       )
     });
+  }
+
+  const { width, height } = useWindowSize();
+
+  const [proceedAnyway, setProceedAnyway] = useState(false);
+  if (!proceedAnyway && width && width <= 650) {
+    return <>
+      <div className={styles.smallWidthWarning}>
+        <h4>StatGPT is best viewed on desktop / wider screens</h4>
+        <button onClick={() => setProceedAnyway(true)}>Proceeed anyway</button>
+      </div>
+    </>
   }
 
   return (

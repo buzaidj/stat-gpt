@@ -17,6 +17,25 @@
   overflow: scroll;
 }
 
+.smallWidthWarning {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  right: 1rem;
+  height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  overflow: scroll;
+}
+
+
 .center {
   position: absolute;
   top: calc(100vh - 7.5rem - 8rem + 2rem);
